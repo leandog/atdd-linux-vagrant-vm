@@ -19,6 +19,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.forward_agent = true
   config.vm.synced_folder(".", "/vagrant")
 
+  # Don't enforce TLS Certificate pinning because of Corporate Environment packet inspection systems
+  config.vm.box_download_insecure = true
+
   config.vm.provider "virtualbox" do |vb|
 
     # Tell VirtualBox that we're expecting a UI for the VM
