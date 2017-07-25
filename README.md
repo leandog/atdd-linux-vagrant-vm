@@ -7,8 +7,8 @@ This project requires a relatively recent computer that supports Hardware Virtua
 
 ## Host OS Requirements
 
-  * VirtualBox 5.1.6 or higher [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
-  * Vagrant 1.8.5 or higher [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
+  * VirtualBox 5.1.24 or higher [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
+  * Vagrant 1.9.7 or higher [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
 
 ## Basic Workflow
 
