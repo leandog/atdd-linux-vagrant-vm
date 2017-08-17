@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ~/.profile
+source ~/.bash_profile
 
 sudo apt-get -y remove unity-lens-shopping > /dev/null 2>&1
 
