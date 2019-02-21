@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-#gsettings set com.canonical.Unity.Launcher favorites "['application://nautilus.desktop', 'application://google-chrome.desktop', 'application://sublime-text-2.desktop', 'application://jetbrains-rubymine.desktop', 'application://gnome-terminal.desktop']"
 gsettings set com.canonical.Unity.Launcher favorites "['application://nautilus.desktop', 'application://google-chrome.desktop', 'application://atom.desktop', 'application://jetbrains-rubymine.desktop', 'application://gnome-terminal.desktop']"
 
 # remove autostart after running this script once

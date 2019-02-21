@@ -4,17 +4,35 @@
 require_relative 'lib/calculate_hardware.rb'
 require_relative 'lib/os_detector.rb'
 
+if ARGV[0] == "up" then
+  has_installed_plugins = false
+
+  unless Vagrant.has_plugin?("vagrant-timezone")
+    system("vagrant plugin install vagrant-timezone")
+    has_installed_plugins = true
+  end
+
+  if has_installed_plugins then
+    puts "Vagrant plugins were installed. Please run `vagrant up` again to install the VM"
+    exit
+  end
+end
+
 vagrant_dir = File.expand_path(File.dirname(__FILE__))
 
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  #if Vagrant.has_plugin?("vagrant-vbguest")
-  #  config.vbguest.auto_update = false
-  #end
+  if Vagrant.has_plugin?("vagrant-vbguest")
+    config.vbguest.auto_update = false
+  end
+
+  if Vagrant.has_plugin?("vagrant-timezone")
+    config.timezone.value = :host
+  end
 
   config.vm.box_check_update = false
-  config.vm.box = "leandog/atdd"
+  config.vm.box = "leandog/training-base"
   config.vm.hostname = "leandog-atdd-vm"
   config.ssh.forward_agent = true
   config.vm.synced_folder(".", "/vagrant")
