@@ -71,6 +71,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # Set the timesync threshold to 10 seconds, instead of the default 20 minutes.
     vb.customize ["guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 10000]
+
+    # Disable the serial port that is from Ubuntu Cloud master image
+    vb.customize ["modifyvm", :id, "--uartmode1", "disconnected"]
   end
 
   config.vm.provision "shell", path: "provision/bootstrap.sh", privileged: false
