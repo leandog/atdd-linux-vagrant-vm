@@ -8,7 +8,7 @@ echo "Starting Log -----------\n" > $LOG_PATH_AND_NAME
 
 echo -e "\n**** Installing Jetbrains RubyMine IDE ****\n"
 
-RUBYMINE_DOWNLOAD_LINK=https://download.jetbrains.com/ruby/RubyMine-2018.3.5.tar.gz
+RUBYMINE_DOWNLOAD_LINK=https://download.jetbrains.com/ruby/RubyMine-2019.1.tar.gz
 RUBYMINE_DOWNLOAD_FILENAME=${RUBYMINE_DOWNLOAD_LINK##*/}
 
 if [[ ! -f ~/$RUBYMINE_DOWNLOAD_FILENAME ]]; then
